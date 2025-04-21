@@ -1,0 +1,25 @@
+type StudentResponse{
+    id: Int
+    firstName: String
+    lastName: String
+    email: String
+    learningSubjects(subjectFilter: [SubjectFilterEnum]!): [LearningSubject]
+}
+
+type LearningSubject{
+    id: Int
+    subject: String
+    marksObtained: Float
+}
+
+enum SubjectFilterEnum{
+    All
+    Java
+    UIPath
+    MongoDB
+    GraphQL
+}
+
+extend type Query{
+    getStudent(id : Int!): StudentResponse
+}

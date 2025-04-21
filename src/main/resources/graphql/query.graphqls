@@ -1,0 +1,4 @@
+type Query{
+    firstName:String
+    lastName:String
+}
